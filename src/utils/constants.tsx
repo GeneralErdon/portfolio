@@ -1,8 +1,10 @@
 import { FaProjectDiagram } from "react-icons/fa";
-import { FaIdCard } from "react-icons/fa6";
+import { FaBookAtlas, FaIdCard, FaChartPie, FaSquarePhone } from "react-icons/fa6";
 
 export const MenuItems:MenuItem[] = [ //* Lista de componentes en el Sidebar
-  { title: "Bio", icon: <FaIdCard /> },
+  { title: "About me", icon: <FaIdCard /> },
+  { title: "Education / Work", icon: <FaBookAtlas />},
+  { title: "Skills", icon: <FaChartPie />},
   { 
     title: "Projects", 
     submenu: true,
@@ -13,7 +15,6 @@ export const MenuItems:MenuItem[] = [ //* Lista de componentes en el Sidebar
       { title: "vitacord" },
     ],
   },
-  { title: "Profile", spacing: true},
-  { title: "Contact" },
+  { title: "Contact", icon: <FaSquarePhone />},
 ]
 
