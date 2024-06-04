@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const SidebarItem: React.FC<SidebarProps> = ({
   title,
@@ -10,20 +11,28 @@ const SidebarItem: React.FC<SidebarProps> = ({
   submenu,
   submenuItems,
   spacing,
+  endpoint,
 }) => {
   const [subMenuOpen, setSubMenuOpen] = useState<boolean>(false);
+  const navigator = useNavigate();
 
   return (
     <>
       <li
         key={key}
-        className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
+        className={`text-dark-gray-200 text-sm flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
         ${spacing ? "mt-9" : "mt-2"}
         `}
-        onClick={() => setSubMenuOpen(!subMenuOpen)}
+        onClick={() => {
+          if (submenu){
+            setSubMenuOpen(!subMenuOpen)
+          } else {
+            navigator(endpoint)
+          }
+        }}
       >
         {/* Icon */}
-        <span className="text-2xl block float-left">
+        <span className="text-2xl block float-left text-orange-500">
           {icon ?? <MdDashboard />}
         </span>
 
@@ -51,8 +60,10 @@ const SidebarItem: React.FC<SidebarProps> = ({
                 className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
                 ${spacing ? "mt-9" : "mt-2"} px-5
                 `}
+                onClick={() => navigator(subItem.endpoint)}
               >
                 <span>{subItem.title}</span>
+                
               </li>
             ))
           }

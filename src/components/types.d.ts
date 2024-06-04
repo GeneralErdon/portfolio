@@ -14,6 +14,7 @@ type MenuItem = {
   icon?: DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
   submenu?: boolean
   submenuItems?: MenuItem[]
+  endpoint:string
 } 
 
 type SidebarProps = TSidebarItem & MenuItem

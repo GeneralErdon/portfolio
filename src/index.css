@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family:'PressStart2P-Regular';
+    src: url('./assets/fonts/PressStart2P-Regular.ttf');
+    
+    font-style: normal;
+}

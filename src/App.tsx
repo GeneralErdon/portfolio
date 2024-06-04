@@ -6,12 +6,12 @@ import NotFound from "@pages/NotFound";
 const App = () => {
   return (
     <Router>
-      <Layout>
-        <Routes location="/">
-          <Route path="/" Component={Home} />
-          <Route path="/*" Component={NotFound} />
+        <Routes >
+          <Route path="/" element={<Layout />} >
+            <Route index element={<Home/>} />
+            <Route path="*" element={<NotFound/>} />
+          </Route>
         </Routes>
-      </Layout>
     </Router>
   );
 };
