@@ -16,14 +16,20 @@ const Sidebar: React.FC<Props> = () => {
 
   return (
     <div 
-      className={`h-screen  bg-dark-gray-800 p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative font-custom`} >
+      className={`
+      h-screen  bg-dark-gray-800 p-5 pt-8 ${open ? "w-72 max-sm:w-96" : "w-20"} duration-300 relative font-custom
+      
+      `} >
 
       {/* Sidebar Arrow button */}
       <FaAngleLeft 
         className={
           `text-purple-500 bg-dark-gray-200 border-2 border-purple-500
             cursor-pointer  text-3xl rounded-full absolute -right-3 top-9
-            ${!open && "rotate-180"} duration-500 `
+            ${!open && "rotate-180"} duration-500 
+            
+            
+            `
         }
         onClick={() => {setOpen(!open)}}
       />
