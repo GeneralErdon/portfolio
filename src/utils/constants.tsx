@@ -21,5 +21,7 @@ export const MenuItems:MenuItem[] = [ //* Lista de componentes en el Sidebar
 
 
 export const SOCIAL_MEDIA = {
-  "GITHUB": "https://github.com/GeneralErdon"
+  "GITHUB": "https://github.com/GeneralErdon",
+  "LINKEDIN": "https://linkedin.com/in/leandro-vincenzo-fermín-de-cicco-220321260",
+  "INTAGRAM": "#"
 }
