@@ -13,6 +13,10 @@
             "webRoot": "${workspaceFolder}/src",
             "pathMappings": [
                 {
+                    "url": "http://localhost:5173/portfolio/src",
+                    "path": "${workspaceFolder}/src"
+                },
+                {
                     "url": "http://localhost:5173/src",
                     "path": "${workspaceFolder}/src"
                 },

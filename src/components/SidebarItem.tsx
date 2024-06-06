@@ -20,7 +20,7 @@ const SidebarItem: React.FC<SidebarProps> = ({
     <>
       <li
         key={key}
-        className={`text-dark-gray-200 text-sm flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
+        className={`text-dark-gray-200 flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
         ${spacing ? "mt-9" : "mt-2"}
         `}
         onClick={() => {
@@ -37,7 +37,7 @@ const SidebarItem: React.FC<SidebarProps> = ({
         </span>
 
         <span
-          className={`text-base font-medium flex-1 duration-200 ${
+          className={`text-lg font-semibold whitespace-nowrap flex-1 duration-200 ${
             !open && "hidden"
           }`}
         >
@@ -57,7 +57,7 @@ const SidebarItem: React.FC<SidebarProps> = ({
           {
             submenuItems?.map((subItem, index) => (
               <li key={index}
-                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
+                className={`text-gray-300 text-md ml-7 flex items-center gap-x-4 cursor-pointer rounded-md p-2 hover:bg-light-white
                 ${spacing ? "mt-9" : "mt-2"} px-5
                 `}
                 onClick={() => navigator(subItem.endpoint)}

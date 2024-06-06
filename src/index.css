@@ -3,8 +3,34 @@
 @tailwind utilities;
 
 @font-face {
-    font-family:'PressStart2P-Regular';
-    src: url('./assets/fonts/PressStart2P-Regular.ttf');
-    
-    font-style: normal;
+  font-family: "PressStart2P-Regular";
+  src: url("./assets/fonts/PressStart2P-Regular.ttf");
+
+  font-style: normal;
+}
+
+.typing-text {
+  overflow: hidden; /* Asegura que el contenedor no expanda su tamaño */
+  border-right: 0.15em solid orange; /* Añade un cursor */
+  white-space: nowrap; /* Evita el salto de línea */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }

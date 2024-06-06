@@ -1,22 +1,34 @@
 import { FaProjectDiagram } from "react-icons/fa";
 import { FaBookAtlas, FaIdCard, FaChartPie, FaSquarePhone } from "react-icons/fa6";
 
+export const ROUTES = {
+  "EDUCATION": "portfolio/education",
+  "HOME": "portfolio/",
+  "ABOUT": "portfolio/about",
+  "SKILLS": "portfolio/skills",
+  "PROJECTS": {
+    "SYSCAM": "portfolio/projects/syscam",
+    "SINTEG": "portfolio/projects/sinteg",
+  },
+  "CONTACT": "portfolio/contact"
+}
+
 export const MenuItems:MenuItem[] = [ //* Lista de componentes en el Sidebar
-  { title: "About me", icon: <FaIdCard />, endpoint: "about" },
-  { title: "Education / Work", icon: <FaBookAtlas />, endpoint: "education"},
-  { title: "Skills", icon: <FaChartPie />, endpoint: "skills"},
+  { title: "About me", icon: <FaIdCard />, endpoint: ROUTES.ABOUT },
+  { title: "Education / Work", icon: <FaBookAtlas />, endpoint: ROUTES.EDUCATION},
+  { title: "Skills", icon: <FaChartPie />, endpoint: "portfolio/skills"},
   { 
     title: "Projects", 
     submenu: true,
     icon: <FaProjectDiagram />,
     endpoint: "",
     submenuItems: [
-      { title: "syscam", endpoint:"syscam" },
-      { title: "sinteg", endpoint: "sinteg" },
-      { title: "vitacord", endpoint: "vitacord" },
+      { title: "syscam", endpoint:ROUTES.PROJECTS.SYSCAM },
+      { title: "sinteg", endpoint:ROUTES.PROJECTS.SINTEG },
+      // { title: "vitacord", endpoint: ROUTES.PROJECTS },
     ],
   },
-  { title: "Contact", icon: <FaSquarePhone />, endpoint: "contact"},
+  { title: "Contact", icon: <FaSquarePhone />, endpoint: ROUTES.CONTACT},
 ]
 
 
