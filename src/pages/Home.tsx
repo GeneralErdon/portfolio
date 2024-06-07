@@ -1,8 +1,7 @@
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import ProfilePic from "@assets/images/ProfilePic.jpg";
-import { ROUTES, SOCIAL_MEDIA } from "@utils/constants";
+import {  SOCIAL_MEDIA } from "@utils/constants";
 import { SiGmail, SiProtonmail } from "react-icons/si";
-import { Link } from "react-router-dom";
 
 const Home: React.FC<Props> = () => {
   return (
