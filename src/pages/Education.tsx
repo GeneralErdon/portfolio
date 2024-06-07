@@ -1,43 +1,45 @@
 import { ReactElement } from "react";
 
-const ExperienceSegment: React.FC<{
+interface ExperienceSegmentProps {
   company: string;
   years: string;
   matter: string;
   tasks?: string[];
   children: ReactElement<HTMLElement>;
-}> = ({ company, years, matter, tasks, children }) => {
-  return (
-    <div className="flex flex-col ">
-      <hr className=" text-dark-gray-200 w-[80%] self-center my-10" />
-      <ul className="text-left mx-10 ">
-        <li>
-          <h2 className="text-3xl font-semibold">{company}</h2>
-        </li>
-        <li>
-          <span className="text-md font-semibold">{years}</span>
-        </li>
-        <li className="mt-5 text-2xl font-semibold">{matter}</li>
-        {(tasks) && (
-          <li className="text-center">
-            <span className="text-2xl font-semibold">Tasks</span>
-            <ul className="text-left text-lg font-medium">
-              {tasks.map((value, index) => {
-                return (
-                  <li className="my-2" key={index}>
-                    <span className="mx-5 font-extrabold">*</span> {value}
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        )}
+}
 
-        <li className=" p-5 text-center">
-          <span className=" text-2xl font-semibold">Description</span>
-          <div className=" text-md text-justify  px-28">{children}</div>
-        </li>
-      </ul>
+const ExperienceSegment: React.FC<ExperienceSegmentProps> = ({
+  company,
+  years,
+  matter,
+  tasks,
+  children,
+}) => {
+  return (
+    <div className="flex flex-col bg-dark-gray-700 rounded-lg p-6 mb-6 shadow-md">
+      <div className="mb-4">
+        <h2 className="text-3xl font-bold text-blue-500">{company}</h2>
+        <span className="text-lg font-semibold text-gray-400">{years}</span>
+      </div>
+      <div className="mb-4">
+        <h3 className="text-2xl font-semibold">{matter}</h3>
+      </div>
+      {tasks && (
+        <div className="mb-4">
+          <h4 className="text-xl font-semibold">Tasks</h4>
+          <ul className="list-disc list-inside ml-4 text-lg">
+            {tasks.map((value, index) => (
+              <li key={index} className="mb-2">
+                {value}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <div className="mb-4">
+        <h4 className="text-xl font-semibold">Description</h4>
+        <div className="text-md text-justify">{children}</div>
+      </div>
     </div>
   );
 };
@@ -56,19 +58,19 @@ const CPV_TASKS = [
 
 const Education: React.FC = () => {
   return (
-    <div className="flex flex-col">
-      <h1 className=" typing-text max-w-fit font-custom text-4xl my-10 ml-10 text-center self-center">
-        Laboral Experience
-      </h1>
-      {/* La experiencia laboral */}
-
+    <div className="p-4">
+      <div className="flex justify-center">
+        <h1 className="text-4xl typing-text max-w-fit font-bold text-center my-10">
+          Laboral Experience
+        </h1>
+      </div>
       <ExperienceSegment
         company="Centro Policlinico Valencia C.A"
         years="2022 - actual"
         matter="Software Developer"
         tasks={CPV_TASKS}
       >
-        <div className="space-y-2 text-justify">
+        <div className="space-y-2">
           <p>
             My principal task is lead the development of the applications and
             interview the clients for elaborate the database schema that will be
@@ -82,22 +84,18 @@ const Education: React.FC = () => {
           </p>
           <p>
             I help the Front-End integrating the API with React and to make some
-            components. At the end I'm the one who will deploy the app on the server for LAN
-            use only, I'm comfortable working with Docker and the automation
-            process of deployment, scripts and database backups.
+            components. At the end I'm the one who will deploy the app on the
+            server for LAN use only, I'm comfortable working with Docker and the
+            automation process of deployment, scripts and database backups.
           </p>
         </div>
       </ExperienceSegment>
-      {/* Education */}
-      <h1 className=" typing-text max-w-fit font-custom text-4xl my-10 ml-10 text-center self-center">
-        Education
-      </h1>
 
+      <h1 className="text-4xl font-bold text-center my-10">Education</h1>
       <ExperienceSegment
-      company="Instituto Universitario Juan Pablo Perez Alfonso (IUTEPAL)"
-      years="2023"
-      matter="Informatic Engineer"
-
+        company="Instituto Universitario Juan Pablo Perez Alfonso (IUTEPAL)"
+        years="2023"
+        matter="Informatic Engineer"
       >
         <p>Graduated with academic distinction and the best performance.</p>
       </ExperienceSegment>
@@ -106,7 +104,10 @@ const Education: React.FC = () => {
         years="2019"
         matter="Basic Italian Course"
       >
-        <p>Graduated with the best scores and learned basics of the Italian laguage</p>
+        <p>
+          Graduated with the best scores and learned basics of the Italian
+          language
+        </p>
       </ExperienceSegment>
     </div>
   );
