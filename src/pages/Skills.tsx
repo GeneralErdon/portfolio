@@ -1,61 +1,154 @@
-const PROGRAMMING_LANGUAGES = [
-  "Python",
-  "Javascript",
-  "Typescript",
-  "Java",
-]
+import { ReactElement } from "react";
+import { IconType } from "react-icons";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiReact,
+  SiDjango,
+  SiFastapi,
+  SiGit,
+  SiDocker,
+  SiNginx,
+  SiTailwindcss,
+  SiRedux,
+  SiPandas,
+  SiNumpy,
+  SiJsonwebtokens,
+  SiUbuntu,
+  SiGnubash,
+  SiHtml5,
+  SiCss3,
+  SiPostgresql,
+  SiMicrosoftsqlserver,
+  SiSqlite,
+  SiRedis,
+  SiRabbitmq,
+  SiAxios,
+  SiOpenssl,
+} from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { RiJavaLine } from "react-icons/ri";
 
+interface Skill {
+  name: string;
+  icon: ReactElement<IconType> | string;
+}
 
+interface SkillCategory {
+  title: string;
+  skills: Skill[];
+}
+
+const skillsData: SkillCategory[] = [
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "Python", icon: <SiPython className="text-[#31648F]" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-[#F7E123]" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-[#087DCD]" /> },
+      { name: "Java", icon: <RiJavaLine className="text-[#ED262C]" /> },
+      { name: "Bash", icon: <SiGnubash className="text-dark-gray-100" /> },
+    ],
+  },
+  {
+    title: "Frameworks",
+    skills: [
+      { name: "Django", icon: <SiDjango className="text-[#135238]" /> },
+      { name: "FastAPI", icon: <SiFastapi className="text-[#0C9A8E]" /> },
+      { name: "React", icon: <SiReact className="text-[#07D9FF]" /> },
+      { name: "Express", icon: <SiJavascript className="text-[#F7E123]" /> },
+    ],
+  },
+  {
+    title: "Libraries",
+    skills: [
+      {
+        name: "Django Rest Framework",
+        icon: <SiDjango className="text-[#135238]" />,
+      },
+      { name: "Pandas", icon: <SiPandas className="text-[#1C0B5C]" /> },
+      { name: "Numpy", icon: <SiNumpy className="text-[#537AD0]" /> },
+      {
+        name: "Simple JWT",
+        icon: <SiJsonwebtokens className="text-[#D740FF]" />,
+      },
+      {
+        name: "TailwindCSS",
+        icon: <SiTailwindcss className="text-[#0DB7D4]" />,
+      },
+      { name: "Redux", icon: <SiRedux className="text-[#7950BD]" /> },
+      { name: "Axios", icon: <SiAxios className="text-[#894798]" /> },
+    ],
+  },
+  {
+    title: "Servers and DevOps",
+    skills: [
+      { name: "Nginx", icon: <SiNginx className="text-[#07993F]" /> },
+      { name: "Git", icon: <SiGit className="text-[#F05539]" /> },
+      { name: "Docker", icon: <SiDocker className="text-[#2367EE]" /> },
+      { name: "GNU/Linux", icon: <SiUbuntu className="text-[#DD460F]" /> },
+    ],
+  },
+  {
+    title: "Database",
+    skills: [
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-[#396B94]" /> },
+      { name: "MySQL", icon: <GrMysql className="text-[#07658F]" /> },
+      { name: "SQLServer", icon: <SiMicrosoftsqlserver className="text-[#C42D2D]" /> },
+      { name: "SQLite", icon: <SiSqlite className="text-[#0A3B54]" /> },
+      { name: "Redis", icon: <SiRedis className="text-[#DD3E33]" /> },
+    ],
+  },
+  {
+    title: "Other",
+    skills: [
+      { name: "HTML", icon: <SiHtml5 className="text-[#F15E30]" /> },
+      { name: "CSS", icon: <SiCss3 className="text-[#1D78BD]" /> },
+      { name: "RabbitMQ", icon: <SiRabbitmq className="text-[#FF6A07]" /> },
+      { name: "openSSL", icon: <SiOpenssl className="text-[#751A18]" /> },
+    ],
+  },
+  {
+    title: "Languages",
+    skills: [
+      { name: "English", icon: "🇺🇸"},
+      { name: "Spanish", icon: "🇪🇸"},
+      { name: "Italian", icon: "🇮🇹" }
+    ]
+  }
+];
 
 const Skills: React.FC = () => {
   return (
-    <div className="bg-dark-gray-800 text-dark-gray-200 p-8 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold mb-6 text-center">Skills</h1>
-      
-      <div className="flex flex-col md:flex-row md:justify-between md:space-x-4">
-        <div className="mb-6 md:mb-0 md:flex-1">
-          <h2 className="text-3xl font-semibold mb-4">Programming Languages</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li className="text-lg">JavaScript</li>
-            <li className="text-lg">TypeScript</li>
-            <li className="text-lg">Python</li>
-            <li className="text-lg">Java</li>
-            <li className="text-lg">C++</li>
-          </ul>
-        </div>
-        
-        <div className="mb-6 md:mb-0 md:flex-1">
-          <h2 className="text-3xl font-semibold mb-4">Frameworks and Libraries</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li className="text-lg">React</li>
-            <li className="text-lg">Node.js</li>
-            <li className="text-lg">Express.js</li>
-            <li className="text-lg">Django</li>
-            <li className="text-lg">Spring Boot</li>
-          </ul>
-        </div>
+    <div className="p-4">
+      <div className="flex justify-center">
+        <h1 className="text-3xl typing-text max-w-fit font-bold mb-8 text-center">
+          My Skills
+        </h1>
       </div>
-      
-      <div className="flex flex-col md:flex-row md:justify-between md:space-x-4">
-        <div className="mb-6 md:mb-0 md:flex-1">
-          <h2 className="text-3xl font-semibold mb-4">Technologies and Tools</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li className="text-lg">Linux</li>
-            <li className="text-lg">SQL</li>
-            <li className="text-lg">Docker</li>
-            <li className="text-lg">Kubernetes</li>
-            <li className="text-lg">Git</li>
-          </ul>
-        </div>
-        
-        <div className="md:flex-1">
-          <h2 className="text-3xl font-semibold mb-4">Languages</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li className="text-lg">Spanish (Native)</li>
-            <li className="text-lg">English (Fluent)</li>
-            <li className="text-lg">Italian (Basic)</li>
-          </ul>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillsData.map((category, index) => (
+          <div
+            key={index}
+            className="bg-dark-gray-700 rounded-lg shadow-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <h2 className="text-2xl font-semibold mb-4 text-center border-b-2 border-dark-gray-500 pb-2">
+              {category.title}
+            </h2>
+            <ul className="space-y-2">
+              {category.skills.map((skill, skillIndex) => (
+                <li
+                  key={skillIndex}
+                  className="text-lg flex justify-between items-center"
+                >
+                  <span>{skill.name}</span>
+                  <span className="text-gray-400 text-2xl">{skill.icon}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

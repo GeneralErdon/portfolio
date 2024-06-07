@@ -5,7 +5,10 @@ import profilePic from "@assets/images/ProfilePic.jpg";
 const About: React.FC = () => {
   return (
     <>
-      <h1 className="text-4xl font-bold mb-6 text-center">About Me</h1>
+      <div className="flex justify-center">
+      <h1 className="text-4xl typing-text max-w-fit font-bold mb-6 text-center">About Me</h1>
+
+      </div>
       <div className="flex flex-col md:flex-row items-center">
         <img
           className="rounded-full border-4 border-gray-600 h-40 w-40 md:h-56 md:w-56 mb-6 md:mb-0 md:mr-8"
