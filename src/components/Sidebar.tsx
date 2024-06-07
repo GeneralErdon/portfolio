@@ -31,7 +31,7 @@ const SidebarItem: React.FC<SidebarProps> = ({
           }
         }}
       >
-        <span className="text-2xl">{icon ?? <MdDashboard />}</span>
+        <span className="text-2xl text-orange-500">{icon ?? <MdDashboard />}</span>
         <span
           className={`text-lg font-semibold transition-all duration-200 ${
             !open && "hidden"

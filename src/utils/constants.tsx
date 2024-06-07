@@ -14,5 +14,5 @@ export const ROUTES = {
 export const SOCIAL_MEDIA = {
   "GITHUB": "https://github.com/GeneralErdon",
   "LINKEDIN": "https://linkedin.com/in/leandro-vincenzo-fermín-de-cicco-220321260",
-  "INTAGRAM": "#"
+  "INTAGRAM": "https://instagram.com/general_erdon"
 }

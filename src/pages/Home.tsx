@@ -67,7 +67,7 @@ const Home: React.FC<Props> = () => {
             </a>
             
           </div>
-          <Link to={ROUTES.ABOUT} className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300" >About me</Link>
+          {/* <Link to={ROUTES.ABOUT} className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300" >About me</Link> */}
         </div>
       </div>
     </div>
