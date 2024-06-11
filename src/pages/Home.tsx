@@ -15,7 +15,7 @@ const Home: React.FC<Props> = () => {
         <div className="text-center mt-4">
           <h1 className="text-5xl font-bold">Leandro Fermín</h1>
           <h2 className="text-2xl text-gray-400 mt-2">Back-End Developer 💻</h2>
-          <p className="text-lg mt-2">🇻🇪 Valencia, Venezuela 🇻🇪</p>
+          <p className="text-lg mt-2">Valencia, Venezuela</p>
         </div>
       </div>
       <div className="flex justify-center mt-6 space-x-6">

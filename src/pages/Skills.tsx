@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { IconType } from "react-icons";
 import {
   SiTypescript,
@@ -29,6 +29,7 @@ import {
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { RiJavaLine } from "react-icons/ri";
+import { ES, IT, US } from "country-flag-icons/react/3x2";
 
 interface Skill {
   name: string;
@@ -39,6 +40,7 @@ interface SkillCategory {
   title: string;
   skills: Skill[];
 }
+
 
 const skillsData: SkillCategory[] = [
   {
@@ -112,9 +114,9 @@ const skillsData: SkillCategory[] = [
   {
     title: "Languages",
     skills: [
-      { name: "English", icon: "🇺🇸"},
-      { name: "Spanish", icon: "🇪🇸"},
-      { name: "Italian", icon: "🇮🇹" }
+      { name: "English", icon: <US className=" size-[1.5rem]" />},
+      { name: "Spanish", icon: <ES className=" size-[1.5rem]" />},
+      { name: "Italian", icon:  <IT className=" size-[1.5rem]" />},
     ]
   }
 ];

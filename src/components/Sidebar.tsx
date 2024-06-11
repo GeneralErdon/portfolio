@@ -1,6 +1,13 @@
 // Imports
 import { useState } from "react";
-import { FaAngleLeft, FaBookAtlas, FaIdCard, FaChartPie, FaPython, FaAngleDown, } from "react-icons/fa6";
+import {
+  FaAngleLeft,
+  FaBookAtlas,
+  FaIdCard,
+  FaChartPie,
+  FaPython,
+  FaAngleDown,
+} from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@utils/constants";
@@ -31,7 +38,9 @@ const SidebarItem: React.FC<SidebarProps> = ({
           }
         }}
       >
-        <span className="text-2xl text-orange-500">{icon ?? <MdDashboard />}</span>
+        <span className="text-2xl text-orange-500">
+          {icon ?? <MdDashboard />}
+        </span>
         <span
           className={`text-lg font-semibold transition-all duration-200 ${
             !open && "hidden"
@@ -41,7 +50,9 @@ const SidebarItem: React.FC<SidebarProps> = ({
         </span>
         {submenu && open && (
           <FaAngleDown
-            className={`${subMenuOpen && "rotate-180"} transition-all duration-300 ml-auto`}
+            className={`${
+              subMenuOpen && "rotate-180"
+            } transition-all duration-300 ml-auto`}
             onClick={() => setSubMenuOpen(!subMenuOpen)}
           />
         )}
@@ -65,17 +76,16 @@ const SidebarItem: React.FC<SidebarProps> = ({
 
 const MenuItems: MenuItem[] = [
   { title: "About me", icon: <FaIdCard />, endpoint: ROUTES.ABOUT },
-  { title: "Education / Work", icon: <FaBookAtlas />, endpoint: ROUTES.EDUCATION },
-  { title: "Skills", icon: <FaChartPie />, endpoint: "portfolio/skills" },
+  {
+    title: "Education / Work",
+    icon: <FaBookAtlas />,
+    endpoint: ROUTES.EDUCATION,
+  },
+  { title: "Skills", icon: <FaChartPie />, endpoint: ROUTES.SKILLS },
   {
     title: "Projects",
-    submenu: true,
     icon: <FaProjectDiagram />,
-    endpoint: "",
-    submenuItems: [
-      { title: "syscam", endpoint: ROUTES.PROJECTS.SYSCAM },
-      { title: "sinteg", endpoint: ROUTES.PROJECTS.SINTEG },
-    ],
+    endpoint: ROUTES.PROJECTS,
   },
 ];
 
@@ -84,14 +94,33 @@ const Sidebar: React.FC<Props> = () => {
   const navigator = useNavigate();
 
   return (
-    <div className={`bg-dark-gray-800 p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300 relative`}>
+    <div
+      className={`bg-dark-gray-800 p-5 pt-8 ${
+        open ? "w-72" : "w-20"
+      } duration-300 relative`}
+    >
       <FaAngleLeft
-        className={`text-purple-500 bg-dark-gray-200 border-2 border-purple-500 cursor-pointer text-3xl rounded-full absolute -right-3 top-9 transition-all duration-500 ${!open && "rotate-180"}`}
+        className={`text-purple-500 bg-dark-gray-200 border-2 border-purple-500 cursor-pointer text-3xl rounded-full absolute -right-3 top-9 transition-all duration-500 ${
+          !open && "rotate-180"
+        }`}
         onClick={() => setOpen(!open)}
       />
-      <div className="flex items-center cursor-pointer" onClick={() => navigator(ROUTES.HOME)}>
-        <FaPython className={`text-orange-500 text-4xl transition-all duration-500 ${open && "rotate-[360deg]"}`} />
-        <h1 className={`text-dark-gray-200 text-2xl font-semibold ml-3 transition-all duration-300 ${!open && "hidden"}`}>My Portfolio</h1>
+      <div
+        className="flex items-center cursor-pointer"
+        onClick={() => navigator(ROUTES.HOME)}
+      >
+        <FaPython
+          className={`text-orange-500 text-4xl transition-all duration-500 ${
+            open && "rotate-[360deg]"
+          }`}
+        />
+        <h1
+          className={`text-dark-gray-200 text-2xl font-semibold ml-3 transition-all duration-300 ${
+            !open && "hidden"
+          }`}
+        >
+          My Portfolio
+        </h1>
       </div>
       <ul className="mt-4 pt-2">
         {MenuItems.map((val, index) => (

@@ -40,7 +40,7 @@ const About: React.FC = () => {
             tackling new challenges and collaborating with like-minded
             professionals.
           </p>
-          <p className="mb-4">Feel free to connect with me on social media:</p>
+          <p className="mb-4">Feel free to connect with me on social media</p>
         </div>
       </div>
 

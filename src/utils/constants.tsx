@@ -4,11 +4,8 @@ export const ROUTES = {
   "HOME": "/portfolio/",
   "ABOUT": "/portfolio/about",
   "SKILLS": "/portfolio/skills",
-  "PROJECTS": {
-    "SYSCAM": "/portfolio/projects/syscam",
-    "SINTEG": "/portfolio/projects/sinteg",
-  },
-  "CONTACT": "/portfolio/contact"
+  "PROJECTS": "/portfolio/projects",
+  "CONTACT": "/portfolio/contact",
 }
 
 export const SOCIAL_MEDIA = {
