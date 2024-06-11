@@ -1,6 +1,7 @@
 
 export const ROUTES = {
   "EDUCATION": "/portfolio/education",
+  "EXPERIENCE": "/portfolio/experience",
   "HOME": "/portfolio/",
   "ABOUT": "/portfolio/about",
   "SKILLS": "/portfolio/skills",
