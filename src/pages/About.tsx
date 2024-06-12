@@ -1,10 +1,10 @@
-import { SOCIAL_MEDIA } from "@utils/constants";
+import { ROUTES, SOCIAL_MEDIA } from "@utils/constants";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import profilePic from "@assets/images/ProfilePic.jpg";
 
 const About: React.FC = () => {
   return (
-    <div className="flex flex-col items-center px-4 py-8">
+    <div id={ROUTES.ABOUT} className="flex flex-col items-center px-4 py-8">
       <h1 className="text-4xl max-w-fit typing-text font-bold mb-6 text-center">
         About Me
       </h1>

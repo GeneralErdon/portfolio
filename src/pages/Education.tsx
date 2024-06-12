@@ -17,6 +17,8 @@
 //   );
 // };
 
+import { ROUTES } from "@utils/constants";
+
 // // Componente para elementos de Experiencia
 // const ExperienceItem: React.FC<{
 //   company: string;
@@ -113,7 +115,7 @@ interface EducationProps {
 
 const Education: React.FC<EducationProps> = ({ educationList }) => {
   return (
-    <div className="bg-gradient-to-b from-orange-600 to-purple-600 p-8 rounded-lg shadow-xl">
+    <div className="md:bg-gradient-to-b md:from-dark-gray-800 md:to-purple-700 md:p-8 rounded-lg shadow-xl">
       <h2 className="text-3xl font-extrabold text-white mb-6 text-center">Education</h2>
       {educationList.map((education, index) => (
         <div
@@ -147,7 +149,7 @@ const educationList = [
 const EducationPage: React.FC = () => {
 
   return (
-    <div className="container mx-auto p-4 md:p-8">
+    <div id={ROUTES.EDUCATION} className="container mx-auto p-4 md:p-8">
       <Education educationList={educationList} />
     </div>
   );

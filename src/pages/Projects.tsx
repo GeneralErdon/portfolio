@@ -4,6 +4,7 @@ import React from "react";
 import GutsImg from "@assets/images/guts_bigote.jpg";
 import { Project } from "types/Project";
 import ProjectCard from "@components/ProjectCard";
+import { ROUTES } from "@utils/constants";
 
 const projects: Project[] = [
   {
@@ -41,7 +42,7 @@ const projects: Project[] = [
 
 const ProjectPage: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div id={ROUTES.PROJECTS} className="container mx-auto p-4">
       <div className="flex justify-center">
         <h1 className="text-4xl typing-text max-w-fit font-bold mb-8">
           Projects

@@ -30,6 +30,7 @@ import {
 import { GrMysql } from "react-icons/gr";
 import { RiJavaLine } from "react-icons/ri";
 import { ES, IT, US } from "country-flag-icons/react/3x2";
+import { ROUTES } from "@utils/constants";
 
 interface Skill {
   name: string;
@@ -123,7 +124,7 @@ const skillsData: SkillCategory[] = [
 
 const Skills: React.FC = () => {
   return (
-    <div className="p-4">
+    <div id={ROUTES.SKILLS} className="p-4">
       <div className="flex justify-center">
         <h1 className="text-3xl typing-text max-w-fit font-bold mb-8 text-center">
           My Skills

@@ -1,12 +1,12 @@
 
 export const ROUTES = {
-  "EDUCATION": "/portfolio/education",
-  "EXPERIENCE": "/portfolio/experience",
-  "HOME": "/portfolio/",
-  "ABOUT": "/portfolio/about",
-  "SKILLS": "/portfolio/skills",
-  "PROJECTS": "/portfolio/projects",
-  "CONTACT": "/portfolio/contact",
+  "EDUCATION": "#education",
+  "EXPERIENCE": "#experience",
+  "HOME": "/portfolio",
+  "ABOUT": "#about",
+  "SKILLS": "#skills",
+  "PROJECTS": "#projects",
+  "CONTACT": "#contact",
 }
 
 export const SOCIAL_MEDIA = {

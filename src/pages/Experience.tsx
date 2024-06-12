@@ -1,3 +1,5 @@
+import { ROUTES } from "@utils/constants";
+
 interface Experience {
   role: string;
   company: string;
@@ -11,7 +13,7 @@ interface WorkExperienceProps {
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({ experiences }) => {
   return (
-    <div className="bg-gradient-to-b from-orange-600 to-purple-600 p-8 rounded-lg shadow-xl">
+    <div className="md:bg-gradient-to-b md:from-dark-gray-800 md:to-purple-700 md:p-8 rounded-lg shadow-xl">
       <h2 className="text-3xl font-extrabold text-dark-gray-100 mb-6 text-center">
         Experiencia Laboral
       </h2>
@@ -57,7 +59,7 @@ const experiences = [
 ];
 const ExperiencePage: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div id={ROUTES.EXPERIENCE} className="container mx-auto p-4">
       <WorkExperience experiences={experiences} />
     </div>
   );

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { FaIdCard, FaChartPie, FaProjectDiagram } from "react-icons/fa";
-// import { MdDashboard } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@utils/constants";
 import {
   Drawer,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -15,19 +12,19 @@ import {
 import { FaBookAtlas, FaPhone } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
 import { MdWork } from "react-icons/md";
+import { Button } from "@nextui-org/react";
 
 const MenuItems = [
-  { title: "Contact", icon: <FaPhone />, endpoint: ROUTES.HOME },
   { title: "About me", icon: <FaIdCard />, endpoint: ROUTES.ABOUT },
-  { title: "Education", icon: <FaBookAtlas />, endpoint: ROUTES.EDUCATION, },
   { title: "Experience", icon: <MdWork />, endpoint: ROUTES.EXPERIENCE, },
+  { title: "Education", icon: <FaBookAtlas />, endpoint: ROUTES.EDUCATION, },
   { title: "Skills", icon: <FaChartPie />, endpoint: ROUTES.SKILLS },
   { title: "Projects", icon: <FaProjectDiagram />, endpoint: ROUTES.PROJECTS },
+  { title: "Contact", icon: <FaPhone />, endpoint: ROUTES.CONTACT },
 ];
 
 const Menu: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -52,7 +49,7 @@ const Menu: React.FC = () => {
         {MenuItems.map((item, index) => (
           <ListItem
             key={index}
-            onClick={() => navigate(item.endpoint)}
+            onClick={() => document.getElementById(item.endpoint)?.scrollIntoView()}
             className="cursor-pointer hover:bg-dark-gray-400 duration-300"
           >
             <ListItemButton>
@@ -70,24 +67,15 @@ const Menu: React.FC = () => {
   return (
     <div>
       {!open && (
-        <IconButton
-          color="inherit"
+        <Button
+          isIconOnly
           aria-label="open drawer"
-          edge="start"
+          className=" z-50 top-4 left-4 fixed bg-orange-500 hover:bg-orange-600 border-2 border-dark-gray-900 text-xl rounded-full"
           onClick={toggleDrawer(true)}
-          style={{
-            position: "fixed",
-            top: 16,
-            left: 16,
-            zIndex: 1300,
-            padding: "1rem",
-            backgroundColor: "#de5431",
-            border: 2,
-            borderColor: "black",
-          }}
+          
         >
           <TiThMenu className=" text-dark-gray-900" />
-        </IconButton>
+        </Button>
       )}
       <Drawer
         anchor="left"
