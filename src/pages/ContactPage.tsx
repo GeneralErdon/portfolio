@@ -5,7 +5,7 @@ import { SiGmail, SiProtonmail } from "react-icons/si";
 
 const ContactPage: React.FC<Props> = () => {
   return (
-    <div id={ROUTES.CONTACT} className="flex flex-col items-center p-6 bg-dark-gray-800 h-full text-dark-gray-200">
+    <div id={ROUTES.CONTACT} className="flex flex-col items-center p-6 h-full text-dark-gray-200">
       <div className="flex flex-col items-center">
         <img
           className="rounded-full border-4 border-gray-600 h-48 w-48 object-cover shadow-lg"

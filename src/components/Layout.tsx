@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
-import Menu from "./Menu";
+import Navigation from "./Navigation";
 
 const Layout: React.FC<Props> = () => {
   return (
-    <div className="flex bg-dark-gray-500 h-screen w-screen">
-      <Menu />
-      <main className="p-7 flex-auto">
-        <div className="bg-dark-gray-800 h-full w-full text-dark-gray-200 p-4 rounded-lg overflow-y-scroll scroll-smooth shadow-lg">
+    <div className="flex flex-col bg-dark-gray-500 h-screen w-screen">
+      <Navigation />
+      {/* <Menu /> */}
+        <div className="bg-dark-gray-500 h-full w-full text-dark-gray-200 p-4 rounded-lg overflow-y-scroll scroll-smooth shadow-lg">
           <Outlet /> 
         </div>
-      </main>
+      {/* <main className="p-7 flex-auto">
+      </main> */}
     </div>
   );
 };
