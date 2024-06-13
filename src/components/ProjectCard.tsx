@@ -17,7 +17,7 @@ const StyledModal = styled(Modal)({
 });
 
 const BoxStyle: CSSObject = {
-  maxWidth: "50%",
+  maxWidth: "70%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: "24",

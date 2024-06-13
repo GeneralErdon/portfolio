@@ -1,10 +1,25 @@
 // src/components/ProjectPage.tsx
 
 import React from "react";
-import GutsImg from "@assets/images/guts_bigote.jpg";
 import { Project } from "types/Project";
 import ProjectCard from "@components/ProjectCard";
 import { ROUTES } from "@utils/constants";
+
+// Imagenes Sinteg
+import sintegDashboardIMG from "@assets/images/sinteg/sinteg_dashboard.webp";
+import sintegFormIMG from "@assets/images/sinteg/sinteg_formulario_contratante.webp";
+import sintegLoginIMG from "@assets/images/sinteg/sinteg_login.webp";
+import sintegReport1IMG from "@assets/images/sinteg/sinteg_reporte_1.webp";
+import sintegValesIMG from "@assets/images/sinteg/sinteg_vales.webp";
+import sintegValeIMG from "@assets/images/sinteg/sinteg_vale_1.webp";
+
+// Imagenes Syscam
+import syscamLoginIMG from "@assets/images/syscam/syscam_login.webp";
+import syscamCarnetIMG from "@assets/images/syscam/syscam_carnet.webp";
+import syscamMovIMG from "@assets/images/syscam/syscam_movimientos.webp";
+import syscamReport1IMG from "@assets/images/syscam/syscam_reporte_1.webp";
+import syscamReport2IMG from "@assets/images/syscam/syscam_reporte_2.webp";
+import syscamReportpageIMG from "@assets/images/syscam/syscam_reporte_page.webp";
 
 const projects: Project[] = [
   {
@@ -25,7 +40,14 @@ const projects: Project[] = [
       "PostgreSQL",
       "Docker",
     ],
-    images: [GutsImg, GutsImg, GutsImg],
+    images: [
+      sintegLoginIMG,
+      sintegDashboardIMG,
+      sintegFormIMG,
+      sintegReport1IMG,
+      sintegValesIMG,
+      sintegValeIMG,
+    ],
     isPrivate: true,
   },
   {
@@ -33,8 +55,23 @@ const projects: Project[] = [
     title: "Syscam",
     description:
       "HR system to control employee attendance, working hours, medical leaves, absences, night shift bonus hours, overtime, and other related matters.",
-    technologies: ["Django", "HTML", "CSS", "JavaScript", "Pandas", "Numpy", "Docker"],
-    images: [GutsImg, GutsImg, GutsImg, GutsImg, GutsImg, GutsImg],
+    technologies: [
+      "Django",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Pandas",
+      "Numpy",
+      "Docker",
+    ],
+    images: [
+      syscamLoginIMG,
+      syscamMovIMG,
+      syscamCarnetIMG,
+      syscamReportpageIMG,
+      syscamReport1IMG,
+      syscamReport2IMG,
+    ],
     isPrivate: true,
   },
   // More projects here

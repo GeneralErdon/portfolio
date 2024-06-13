@@ -15,7 +15,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ experiences }) => {
   return (
     <div className="md:bg-gradient-to-b md:from-dark-gray-800 md:to-purple-700 md:p-8 rounded-lg shadow-xl">
       <h2 className="text-3xl font-extrabold text-dark-gray-100 mb-6 text-center">
-        Experiencia Laboral
+        Laboral Experience
       </h2>
       {experiences.map((experience, index) => (
         <div
