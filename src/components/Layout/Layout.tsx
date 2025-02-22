@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
 import { Sun, Moon } from "lucide-react"
+import { profileDummydata } from "@/dummyData/profile"
 
 type LayoutProps = {
   children: ReactNode
@@ -12,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold">
-            John Doe
+            {profileDummydata.name}
           </Link>
           <div className="flex items-center space-x-4">
             <Link href="#about" className="hover:text-blue-600 dark:hover:text-blue-400">
@@ -39,7 +40,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <footer className="bg-gray-100 dark:bg-gray-800 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {profileDummydata.name}. All rights reserved.</p>
         </div>
       </footer>
     </div>
